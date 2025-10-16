@@ -1,4 +1,6 @@
 import { useForm } from "react-hook-form";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router";
 
 import {
   Form,
@@ -13,6 +15,8 @@ import { Button } from "@/components/ui/button";
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+
+import { api } from "@/api/axios";
 
 const formSchema = z.object({
   username: z.string().min(1, "Username obbligatorio"),
@@ -34,8 +38,42 @@ const Login: React.FC = () => {
   });
   const errors = form.formState.errors;
 
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
+
   function onSubmit(formData: z.infer<typeof formSchema>) {
-    console.log(formData);
+    const { username, password } = formData;
+
+    api
+      .get(`/users?username=${username}`)
+      .then((response) => {
+        const user = response.data[0] as z.infer<typeof formSchema>;
+
+        if (!user) {
+          form.setError("root", {
+            type: "string",
+            message: "Lo username inserito non esiste",
+          });
+          return;
+        }
+
+        if (password !== user.password) {
+          form.setError("root", {
+            type: "string",
+            message: "La password non è corretta",
+          });
+          return;
+        }
+
+        setAuth({
+          isAuthenticated: true,
+          username: username,
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   return (
@@ -77,6 +115,13 @@ const Login: React.FC = () => {
               </FormItem>
             )}
           />
+
+          {/* Root errors */}
+          {errors.root && (
+            <FormMessage className="text-error-foreground">
+              {errors.root.message}
+            </FormMessage>
+          )}
 
           {/* Submit button */}
           <Button type="submit" className="w-fit self-end mt-4">

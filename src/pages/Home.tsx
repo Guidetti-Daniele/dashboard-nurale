@@ -15,7 +15,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <p>Benvenutom, {username}</p>
+      <p>Benvenuto, {username}</p>
     </div>
   );
 };
