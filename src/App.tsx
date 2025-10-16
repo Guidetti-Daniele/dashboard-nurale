@@ -11,6 +11,7 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
+          {/* Routes that require login go down below */}
           <Route element={<ProtectedRoutes />}>
             <Route index path="/" element={<Home />} />
           </Route>

@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import PasswordInput from "@/components/molecules/PasswordInput";
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -107,7 +108,8 @@ const Login: React.FC = () => {
               <FormItem>
                 <FormLabel>Password:</FormLabel>
                 <FormControl>
-                  <Input type="password" {...field} />
+                  <PasswordInput {...field} />
+                  {/* <Input type="password" {...field} /> */}
                 </FormControl>
                 <FormMessage className="text-error-foreground">
                   {errors.password && <p>{errors.password.message}</p>}
