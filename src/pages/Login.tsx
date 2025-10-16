@@ -6,6 +6,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -31,6 +32,7 @@ const Login: React.FC = () => {
       password: "",
     },
   });
+  const errors = form.formState.errors;
 
   function onSubmit(formData: z.infer<typeof formSchema>) {
     console.log(formData);
@@ -53,6 +55,9 @@ const Login: React.FC = () => {
                 <FormControl>
                   <Input type="text" autoComplete="off" {...field} />
                 </FormControl>
+                <FormMessage className="text-error-foreground">
+                  {errors.username && <p>{errors.username.message}</p>}
+                </FormMessage>
               </FormItem>
             )}
           />
@@ -66,6 +71,9 @@ const Login: React.FC = () => {
                 <FormControl>
                   <Input type="password" {...field} />
                 </FormControl>
+                <FormMessage className="text-error-foreground">
+                  {errors.password && <p>{errors.password.message}</p>}
+                </FormMessage>
               </FormItem>
             )}
           />
