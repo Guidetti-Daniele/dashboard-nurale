@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 import AuthProvider from "./contexts/AuthContext";
 
@@ -10,7 +11,10 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route index path="/" element={<Home />} />
+          <Route element={<ProtectedRoutes />}>
+            <Route index path="/" element={<Home />} />
+          </Route>
+
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
