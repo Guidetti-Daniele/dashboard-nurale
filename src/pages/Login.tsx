@@ -24,8 +24,10 @@ const formSchema = z.object({
   password: z.string().min(1, "Password obbligatoria"),
 });
 
+type FormSchema = z.infer<typeof formSchema>;
+
 const Login: React.FC = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
@@ -37,7 +39,7 @@ const Login: React.FC = () => {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
 
-  function onSubmit(formData: z.infer<typeof formSchema>) {
+  function onSubmit(formData: FormSchema) {
     const { username, password } = formData;
 
     // The following api call should be replace with a real api call (post method)
@@ -47,7 +49,7 @@ const Login: React.FC = () => {
     api
       .get(`/users?username=${username}`)
       .then((response) => {
-        const user = response.data[0] as z.infer<typeof formSchema>;
+        const user = response.data[0] as FormSchema;
 
         if (!user) {
           form.setError("root", {
