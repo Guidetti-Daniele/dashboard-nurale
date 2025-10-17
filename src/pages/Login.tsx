@@ -21,12 +21,7 @@ import { api } from "@/api/axios";
 
 const formSchema = z.object({
   username: z.string().min(1, "Username obbligatorio"),
-  password: z
-    .string()
-    .regex(
-      /^(?=.*[A-Za-z])(?=(?:.*\d){2,})(?=.*[^A-Za-z0-9]).{8,}$/,
-      "La password deve essere almeno di 8 caratteri e deve contenere almeno 1 carattere speciale e 2 numeri."
-    ),
+  password: z.string().min(1, "Password obbligatoria"),
 });
 
 const Login: React.FC = () => {
@@ -45,6 +40,10 @@ const Login: React.FC = () => {
   function onSubmit(formData: z.infer<typeof formSchema>) {
     const { username, password } = formData;
 
+    // The following api call should be replace with a real api call (post method)
+    // which calls an authentication api which should return a token or a session cookie.
+    // For development purposes it's used a mocked json server that in production would be
+    // replaced by a real db.
     api
       .get(`/users?username=${username}`)
       .then((response) => {
