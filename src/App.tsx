@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import ProtectedRoutes from "./components/ProtectedRoutes";
-import { HOME_ROUTE, LOGIN_ROUTE } from "./constants/routes";
+import { ROUTE_PATHS } from "./constants/routes";
 
 import AuthProvider from "./contexts/AuthContext";
 
@@ -14,10 +14,10 @@ function App() {
         <Routes>
           {/* Routes that require login go down below */}
           <Route element={<ProtectedRoutes />}>
-            <Route index path={HOME_ROUTE} element={<Home />} />
+            <Route index path={ROUTE_PATHS.home} element={<Home />} />
           </Route>
 
-          <Route path={LOGIN_ROUTE} element={<Login />} />
+          <Route path={ROUTE_PATHS.login} element={<Login />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
