@@ -11,7 +11,7 @@ const TextInputField: React.FC<SpecificFormFieldProps> = ({
     <FormField
       {...formFieldProps}
       renderInput={(field) => (
-        <Input type="text" autoComplete="off" {...field} />
+        <Input id={field.name} type="text" autoComplete="off" {...field} />
       )}
     />
   );

@@ -10,7 +10,7 @@ const PasswordInputField: React.FC<SpecificFormFieldProps> = ({
   return (
     <FormField
       {...formFieldProps}
-      renderInput={(field) => <PasswordInput {...field} />}
+      renderInput={(field) => <PasswordInput id={field.name} {...field} />}
     />
   );
 };
