@@ -2,22 +2,17 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router";
 
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import PasswordInput from "@/components/molecules/PasswordInput";
+import { FieldError } from "@/components/ui/field";
+import TextInputField from "@/components/molecules/FormFields/TextInputField";
+import PasswordInputField from "@/components/molecules/FormFields/PasswordInputField";
+import Form from "@/components/organisms/Form";
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { api } from "@/api/axios";
+import { ROUTE_PATHS } from "@/constants/routes";
 
 const formSchema = z.object({
   username: z.string().min(1, "Username obbligatorio"),
@@ -27,14 +22,17 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 const Login: React.FC = () => {
-  const form = useForm<FormSchema>({
+  const useFormProps = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
       password: "",
     },
   });
-  const errors = form.formState.errors;
+  const {
+    setError,
+    formState: { errors },
+  } = useFormProps;
 
   const { setAuth } = useAuth();
   const navigate = useNavigate();
@@ -52,7 +50,7 @@ const Login: React.FC = () => {
         const user = response.data[0] as FormSchema;
 
         if (!user) {
-          form.setError("root", {
+          setError("root", {
             type: "string",
             message: "Lo username inserito non esiste",
           });
@@ -60,7 +58,7 @@ const Login: React.FC = () => {
         }
 
         if (password !== user.password) {
-          form.setError("root", {
+          setError("root", {
             type: "string",
             message: "La password non è corretta",
           });
@@ -71,7 +69,7 @@ const Login: React.FC = () => {
           isAuthenticated: true,
           username: username,
         });
-        navigate("/");
+        navigate(ROUTE_PATHS.home);
       })
       .catch((error) => {
         console.error(error);
@@ -80,57 +78,24 @@ const Login: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen p-1 bg-blue-200">
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col gap-3.5 w-xl max-w-full shadow-xl rounded-md p-5 bg-white"
-        >
-          {/* Username field */}
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Username:</FormLabel>
-                <FormControl>
-                  <Input type="text" autoComplete="off" {...field} />
-                </FormControl>
-                <FormMessage className="text-error-foreground">
-                  {errors.username && <p>{errors.username.message}</p>}
-                </FormMessage>
-              </FormItem>
-            )}
-          />
-          {/* Password field */}
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password:</FormLabel>
-                <FormControl>
-                  <PasswordInput {...field} />
-                  {/* <Input type="password" {...field} /> */}
-                </FormControl>
-                <FormMessage className="text-error-foreground">
-                  {errors.password && <p>{errors.password.message}</p>}
-                </FormMessage>
-              </FormItem>
-            )}
-          />
+      <Form<FormSchema>
+        useFormProps={useFormProps}
+        onSubmit={onSubmit}
+        className="flex flex-col gap-3.5 w-xl max-w-full shadow-xl rounded-md p-5 bg-white"
+      >
+        {/* Username field */}
+        <TextInputField name="username" label="Username" />
 
-          {/* Root errors */}
-          {errors.root && (
-            <FormMessage className="text-error-foreground">
-              {errors.root.message}
-            </FormMessage>
-          )}
+        {/* Password field */}
+        <PasswordInputField name="password" label="Password" />
 
-          {/* Submit button */}
-          <Button type="submit" className="w-fit self-end mt-4">
-            Accedi
-          </Button>
-        </form>
+        {/* Root errors */}
+        {errors.root && <FieldError errors={[errors.root]} />}
+
+        {/* Submit button */}
+        <Button type="submit" className="w-fit self-end mt-4">
+          Accedi
+        </Button>
       </Form>
     </div>
   );

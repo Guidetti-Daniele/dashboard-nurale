@@ -1,6 +1,6 @@
 import { useState, type ComponentPropsWithoutRef } from "react";
 
-import { Input } from "../ui/input";
+import { Input } from "@/components/ui/input";
 import { Eye, EyeOff } from "lucide-react";
 
 const PasswordInput: React.FC<ComponentPropsWithoutRef<typeof Input>> = ({
