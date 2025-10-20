@@ -11,7 +11,7 @@ import Form from "@/components/organisms/Form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { api } from "@/api/axios";
+import { ACCOUNTS_URL, api } from "@/api/axios";
 import { ROUTE_PATHS } from "@/constants/routes";
 
 const formSchema = z.object({
@@ -45,7 +45,7 @@ const Login: React.FC = () => {
     // For development purposes it's used a mocked json server that in production would be
     // replaced by a real db.
     api
-      .get(`/users?username=${username}`)
+      .get(`${ACCOUNTS_URL}?username=${username}`)
       .then((response) => {
         const user = response.data[0] as FormSchema;
 
