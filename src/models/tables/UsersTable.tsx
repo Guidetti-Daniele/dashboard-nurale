@@ -1,0 +1,93 @@
+import { z } from "zod";
+import { createColumnHelper, type ColumnDef } from "@tanstack/react-table";
+
+const userTableModel = z.object({
+  id: z.int(),
+  name: z.string(),
+  username: z.string(),
+  email: z.email(),
+  address: z.object({
+    street: z.string(),
+    suite: z.string(),
+    city: z.string(),
+    zipcode: z.string(),
+    geo: z.object({
+      lat: z.float64(),
+      lng: z.float64(),
+    }),
+  }),
+  phone: z.string(),
+  website: z.string(),
+  company: z.object({
+    name: z.string(),
+    catchPhrase: z.string(),
+    bs: z.string(),
+  }),
+});
+
+export type UserTable = z.infer<typeof userTableModel>;
+
+const columnHelper = createColumnHelper<UserTable>();
+
+export const UserColumns: ColumnDef<UserTable>[] = [
+  columnHelper.accessor("id", {
+    header: "Id",
+  }),
+  columnHelper.accessor("name", {
+    header: "Nominativo",
+  }),
+  columnHelper.accessor("username", {
+    header: "Username",
+  }),
+  columnHelper.accessor("email", {
+    header: "Email",
+  }),
+  columnHelper.group({
+    header: "Indirizzo",
+    columns: [
+      columnHelper.accessor("address.street", {
+        header: "Via",
+      }),
+      columnHelper.accessor("address.suite", {
+        header: "Numero civico",
+      }),
+      columnHelper.accessor("address.city", {
+        header: "Città",
+      }),
+      columnHelper.accessor("address.zipcode", {
+        header: "Codice postale",
+      }),
+      columnHelper.group({
+        header: "Coordinate",
+        columns: [
+          columnHelper.accessor("address.geo.lat", {
+            header: "Lat.",
+          }),
+          columnHelper.accessor("address.geo.lng", {
+            header: "Lon.",
+          }),
+        ],
+      }),
+    ],
+  }),
+  columnHelper.accessor("phone", {
+    header: "Telefono",
+  }),
+  columnHelper.accessor("website", {
+    header: "Sito web",
+  }),
+  columnHelper.group({
+    header: "Azienda",
+    columns: [
+      columnHelper.accessor("company.name", {
+        header: "Nome",
+      }),
+      columnHelper.accessor("company.catchPhrase", {
+        header: "Slogan",
+      }),
+      columnHelper.accessor("company.bs", {
+        header: "Mission",
+      }),
+    ],
+  }),
+] as ColumnDef<UserTable>[];
