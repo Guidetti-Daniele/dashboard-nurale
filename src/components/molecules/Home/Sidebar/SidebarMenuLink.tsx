@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { cn } from "@/lib/utils";
+import { NavLink, useLocation } from "react-router";
 
 import type { RouteType } from "@/constants/routes";
 
@@ -14,10 +15,16 @@ const SidebarMenuLink: React.FC<SidebarMenuLinkProps> = ({
   url,
   icon,
 }) => {
+  const { pathname } = useLocation();
+  const isActive = pathname === url;
+
   return (
     <NavLink
       to={url}
-      className="flex items-center gap-2 w-full rounded-lg p-2 bg-gray-200 hover:bg-black hover:text-white cursor-pointer"
+      className={cn(
+        "flex items-center gap-2 w-full rounded-lg p-2 hover:bg-black hover:text-white cursor-pointer",
+        isActive ? "bg-red-500" : "bg-gray-200"
+      )}
     >
       {icon}
       <span>{title}</span>

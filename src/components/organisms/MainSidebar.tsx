@@ -42,12 +42,12 @@ const items = [
   },
 ];
 
-const HomeSidebar: React.FC = () => {
+const MainSidebar: React.FC = () => {
   return (
     <Sidebar variant="floating">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarMenu className="gap-2">
+          <SidebarMenu className="group gap-2">
             {items.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
@@ -63,4 +63,4 @@ const HomeSidebar: React.FC = () => {
   );
 };
 
-export default HomeSidebar;
+export default MainSidebar;
