@@ -22,7 +22,7 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 const Login: React.FC = () => {
-  const useFormProps = useForm<FormSchema>({
+  const formMethods = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
@@ -32,7 +32,7 @@ const Login: React.FC = () => {
   const {
     setError,
     formState: { errors },
-  } = useFormProps;
+  } = formMethods;
 
   const { setAuth } = useAuth();
   const navigate = useNavigate();
@@ -79,15 +79,15 @@ const Login: React.FC = () => {
   return (
     <div className="flex justify-center items-center min-h-screen p-1 bg-blue-200">
       <Form<FormSchema>
-        useFormProps={useFormProps}
+        formMethods={formMethods}
         onSubmit={onSubmit}
         className="flex flex-col gap-3.5 w-xl max-w-full shadow-xl rounded-md p-5 bg-white"
       >
         {/* Username field */}
-        <TextInputField name="username" label="Username" />
+        <TextInputField name="username" label="Username:" />
 
         {/* Password field */}
-        <PasswordInputField name="password" label="Password" />
+        <PasswordInputField name="password" label="Password:" />
 
         {/* Root errors */}
         {errors.root && <FieldError errors={[errors.root]} />}

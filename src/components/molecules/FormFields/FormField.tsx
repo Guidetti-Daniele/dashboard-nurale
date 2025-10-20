@@ -35,7 +35,7 @@ const FormField: React.FC<FormFieldProps> = ({
       control={control}
       render={({ field, fieldState }) => (
         <Field data-invalid={fieldState.invalid}>
-          <FieldLabel htmlFor={field.name}>{label}:</FieldLabel>
+          <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
           {description && <FieldDescription>{description}</FieldDescription>}
 
           {/* Render the input component */}

@@ -6,22 +6,22 @@ import {
 } from "react-hook-form";
 
 interface FormProps<Schema extends FieldValues> {
-  useFormProps: UseFormReturn<Schema>;
+  formMethods: UseFormReturn<Schema>;
   onSubmit: (data: Schema) => void;
   className: string;
   children: React.ReactNode;
 }
 
 const Form = <Schema extends FieldValues>({
-  useFormProps,
+  formMethods,
   onSubmit,
   className,
   children,
 }: FormProps<Schema>) => {
-  const { handleSubmit } = useFormProps;
+  const { handleSubmit } = formMethods;
 
   return (
-    <FormProvider {...useFormProps}>
+    <FormProvider {...formMethods}>
       <form onSubmit={handleSubmit(onSubmit)} className={className}>
         {children}
       </form>
