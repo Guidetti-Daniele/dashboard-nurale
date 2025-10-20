@@ -6,6 +6,10 @@ import AuthProvider from "./contexts/AuthContext";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Inbox from "./pages/Inbox";
+import Calendar from "./pages/Calendar";
+import Search from "./pages/Search";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -15,6 +19,10 @@ function App() {
           {/* Routes that require login go down below */}
           <Route element={<ProtectedRoutes />}>
             <Route index path={ROUTE_PATHS.home} element={<Home />} />
+            <Route index path={ROUTE_PATHS.inbox} element={<Inbox />} />
+            <Route index path={ROUTE_PATHS.calendar} element={<Calendar />} />
+            <Route index path={ROUTE_PATHS.search} element={<Search />} />
+            <Route index path={ROUTE_PATHS.settings} element={<Settings />} />
           </Route>
 
           <Route path={ROUTE_PATHS.login} element={<Login />} />
