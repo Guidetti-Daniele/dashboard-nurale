@@ -1,15 +1,7 @@
-import { useAuth } from "@/hooks/useAuth";
+import Welcome from "@/components/molecules/Home/Welcome";
 
 const Home: React.FC = () => {
-  const {
-    auth: { username },
-  } = useAuth();
-
-  return (
-    <div>
-      <p>Benvenuto, {username}</p>
-    </div>
-  );
+  return <Welcome />;
 };
 
 export default Home;
