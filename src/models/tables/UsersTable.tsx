@@ -1,10 +1,13 @@
 import { z } from "zod";
 import { createColumnHelper, type ColumnDef } from "@tanstack/react-table";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const userTableModel = z.object({
   id: z.int(),
   name: z.string(),
   username: z.string(),
+  role: z.enum(["user", "admin"]),
+  dateOfBirth: z.date(),
   email: z.email(),
   address: z.object({
     street: z.string(),
@@ -38,6 +41,12 @@ export const UserColumns: ColumnDef<UserTable>[] = [
   }),
   columnHelper.accessor("username", {
     header: "Username",
+  }),
+  columnHelper.accessor("role", {
+    header: "Ruolo",
+  }),
+  columnHelper.accessor("dateOfBirth", {
+    header: "Data di nascita",
   }),
   columnHelper.accessor("email", {
     header: "Email",
