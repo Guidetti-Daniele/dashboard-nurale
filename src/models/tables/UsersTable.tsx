@@ -2,7 +2,7 @@ import { z } from "zod";
 import { createColumnHelper, type ColumnDef } from "@tanstack/react-table";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const userTableModel = z.object({
+const usersTDataModel = z.object({
   id: z.int(),
   name: z.string(),
   username: z.string(),
@@ -28,11 +28,11 @@ const userTableModel = z.object({
   }),
 });
 
-export type UserTable = z.infer<typeof userTableModel>;
+export type UsersTData = z.infer<typeof usersTDataModel>;
 
-const columnHelper = createColumnHelper<UserTable>();
+const columnHelper = createColumnHelper<UsersTData>();
 
-export const UserColumns: ColumnDef<UserTable>[] = [
+export const userColumns: ColumnDef<UsersTData>[] = [
   columnHelper.accessor("id", {
     header: "Id",
   }),
@@ -99,4 +99,4 @@ export const UserColumns: ColumnDef<UserTable>[] = [
       }),
     ],
   }),
-] as ColumnDef<UserTable>[];
+] as ColumnDef<UsersTData>[];
