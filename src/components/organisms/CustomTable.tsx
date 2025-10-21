@@ -14,10 +14,10 @@ import {
 } from "../ui/table";
 import NoResults from "../molecules/CustomTable/NoResults";
 
-type CustomTableProps<TData> = {
+export type CustomTableProps<TData> = {
   columns: ColumnDef<TData>[];
   data: TData[];
-  noResultsComp: React.ReactNode;
+  noResultsComp?: React.ReactNode;
 };
 
 const CustomTable = <TData,>({
