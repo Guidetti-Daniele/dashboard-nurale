@@ -52,6 +52,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
     header: "Email",
   }),
   columnHelper.group({
+    id: "address",
     header: "Indirizzo",
     columns: [
       columnHelper.accessor("address.street", {
@@ -67,6 +68,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
         header: "Codice postale",
       }),
       columnHelper.group({
+        id: "address.geo",
         header: "Coordinate",
         columns: [
           columnHelper.accessor("address.geo.lat", {
@@ -86,6 +88,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
     header: "Sito web",
   }),
   columnHelper.group({
+    id: "company",
     header: "Azienda",
     columns: [
       columnHelper.accessor("company.name", {

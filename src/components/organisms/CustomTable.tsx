@@ -9,9 +9,11 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableHead,
   TableHeader,
   TableRow,
 } from "../ui/table";
+
 import NoResults from "../molecules/CustomTable/NoResults";
 
 export type CustomTableProps<TData> = {
@@ -33,18 +35,20 @@ const CustomTable = <TData,>({
 
   const rows = table.getCoreRowModel().rows;
 
+  console.log(table.getHeaderGroups());
+
   return (
     <Table>
       <TableHeader>
         {table.getHeaderGroups().map((headerGroup) => (
           <TableRow key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <TableCell>
+              <TableHead key={header.id} colSpan={header.colSpan}>
                 {flexRender(
                   header.column.columnDef.header,
                   header.getContext()
                 )}
-              </TableCell>
+              </TableHead>
             ))}
           </TableRow>
         ))}
@@ -52,7 +56,7 @@ const CustomTable = <TData,>({
       <TableBody>
         {rows.length
           ? rows.map((row) => (
-              <TableRow id={row.id}>
+              <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
                   <TableCell>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
