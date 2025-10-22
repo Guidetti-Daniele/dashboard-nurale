@@ -32,7 +32,7 @@ const Settings: React.FC = () => {
 
   return (
     <>
-      <section className="mt-5 w-screen min-h-[500px] border-1 border-black rounded-md bg-gray-50/60 flex justify-center items-center">
+      <section className="mt-5 w-screen min-h-[500px] rounded-md bg-gray-50/60 flex justify-center items-center">
         <Suspense fallback={<Spinner className="size-8" />}>
           <PromiseErrorBoundary<UsersTData[]>
             dataPromise={usersPromise}

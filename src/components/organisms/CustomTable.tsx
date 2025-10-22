@@ -16,6 +16,8 @@ import {
 
 import NoResults from "../molecules/CustomTable/NoResults";
 
+import { cn } from "@/lib/utils";
+
 export type CustomTableProps<TData> = {
   columns: ColumnDef<TData>[];
   data: TData[];
@@ -35,19 +37,23 @@ const CustomTable = <TData,>({
 
   const rows = table.getCoreRowModel().rows;
 
-  console.log(table.getHeaderGroups());
-
   return (
-    <Table>
+    <Table className="border w-full overflow-scroll">
       <TableHeader>
         {table.getHeaderGroups().map((headerGroup) => (
           <TableRow key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <TableHead key={header.id} colSpan={header.colSpan}>
-                {flexRender(
-                  header.column.columnDef.header,
-                  header.getContext()
-                )}
+              <TableHead
+                key={header.id}
+                colSpan={header.colSpan}
+                className="border-x text-center"
+              >
+                {header.isPlaceholder
+                  ? null
+                  : flexRender(
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
               </TableHead>
             ))}
           </TableRow>
@@ -58,7 +64,7 @@ const CustomTable = <TData,>({
           ? rows.map((row) => (
               <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell>
+                  <TableCell key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}
