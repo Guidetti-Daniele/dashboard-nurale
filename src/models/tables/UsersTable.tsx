@@ -96,9 +96,11 @@ export const userColumns: ColumnDef<UsersTData>[] = [
       }),
       columnHelper.accessor("company.catchPhrase", {
         header: "Slogan",
+        enableSorting: false,
       }),
       columnHelper.accessor("company.bs", {
         header: "Mission",
+        enableSorting: false,
       }),
     ],
   }),

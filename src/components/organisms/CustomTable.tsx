@@ -17,6 +17,8 @@ import {
 } from "../ui/table";
 
 import NoResults from "../molecules/CustomTable/NoResults";
+import PaginationControls from "../molecules/CustomTable/PaginationControls";
+import SortableTableHead from "../molecules/CustomTable/SortableTableHead";
 
 import type {
   ColumnDef,
@@ -24,7 +26,6 @@ import type {
   SortingState,
   PaginationState,
 } from "@tanstack/react-table";
-import PaginationControls from "../molecules/CustomTable/PaginationControls";
 
 type AllowedStates = {
   columnFilters: ColumnFiltersState;
@@ -70,13 +71,13 @@ const CustomTable = <TData,>({
     getFilteredRowModel: isStateControlled("columnFilters")
       ? getFilteredRowModel()
       : undefined,
-    getSortedRowModel: isStateControlled("sorting")
-      ? getSortedRowModel()
-      : undefined,
+    // getSortedRowModel: isStateControlled("sorting")
+    //   ? getSortedRowModel()
+    //   : undefined,
     getPaginationRowModel: isStateControlled("pagination")
       ? getPaginationRowModel()
       : undefined,
-    // getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
 
     state: { ...tableStates },
     ...tableSetStates,
@@ -87,7 +88,7 @@ const CustomTable = <TData,>({
   return (
     <div>
       {/* Rendering the table */}
-      <Table className="border w-full overflow-scroll">
+      <Table className="border">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
@@ -97,12 +98,7 @@ const CustomTable = <TData,>({
                   colSpan={header.colSpan}
                   className="border-x text-center"
                 >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
+                  <SortableTableHead<TData> header={header} />
                 </TableHead>
               ))}
             </TableRow>
