@@ -16,6 +16,7 @@ const PaginationControls = <TData,>({
   return (
     <div className="mt-5 flex items-center gap-3">
       <Button
+        variant="outline"
         onClick={() => table.previousPage()}
         disabled={!table.getCanPreviousPage()}
       >
@@ -25,6 +26,7 @@ const PaginationControls = <TData,>({
         Pagina {currentPage} di {totalPages}
       </p>
       <Button
+        variant="outline"
         onClick={() => table.nextPage()}
         disabled={!table.getCanNextPage()}
       >
