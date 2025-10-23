@@ -226,6 +226,226 @@
         "catchPhrase": "Centralized empowering task-force",
         "bs": "target end-to-end models"
       }
+    },
+    {
+      "id": 11,
+      "name": "Marissa Ortiz",
+      "username": "MarOrt88",
+      "role": "user",
+      "dateOfBirth": "1991-03-22",
+      "email": "marissa.ortiz@zonerail.com",
+      "address": {
+        "street": "Holloway Avenue",
+        "suite": "Apt. 120",
+        "city": "Springville",
+        "zipcode": "67123",
+        "geo": { "lat": 35.2321, "lng": -95.8721 }
+      },
+      "phone": "489-123-9832 x321",
+      "website": "zonerail.net",
+      "company": {
+        "name": "Zonerail Ltd.",
+        "catchPhrase": "Rapid deployment software matrix",
+        "bs": "empower ubiquitous convergence"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Brian Chen",
+      "username": "brianc92",
+      "role": "admin",
+      "dateOfBirth": "1983-08-17",
+      "email": "brian.chen@cogitronix.io",
+      "address": {
+        "street": "Neptune Blvd",
+        "suite": "Suite 342",
+        "city": "Riverside",
+        "zipcode": "20987-4321",
+        "geo": { "lat": 42.9176, "lng": -83.2193 }
+      },
+      "phone": "312-848-5509",
+      "website": "cogitronix.io",
+      "company": {
+        "name": "Cogitronix",
+        "catchPhrase": "Cloud-native microservices architecture",
+        "bs": "leverage decentralized ecosystems"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Linda Alvarez",
+      "username": "LAlva22",
+      "role": "user",
+      "dateOfBirth": "1979-02-09",
+      "email": "linda.alvarez@vebotech.com",
+      "address": {
+        "street": "Orchid Lane",
+        "suite": "Apt. 904",
+        "city": "Brookview",
+        "zipcode": "90872",
+        "geo": { "lat": 28.9942, "lng": -97.4456 }
+      },
+      "phone": "1-800-444-9832",
+      "website": "vebotech.com",
+      "company": {
+        "name": "VeboTech",
+        "catchPhrase": "Automated analytics pipeline",
+        "bs": "streamline data-driven decisions"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Jamal Greene",
+      "username": "JamalG2020",
+      "role": "admin",
+      "dateOfBirth": "1980-10-01",
+      "email": "jamal.greene@finopulse.org",
+      "address": {
+        "street": "Elm Ridge Road",
+        "suite": "Suite 501",
+        "city": "Northgrove",
+        "zipcode": "12980-2834",
+        "geo": { "lat": 36.7891, "lng": -112.3374 }
+      },
+      "phone": "403-546-2209",
+      "website": "finopulse.org",
+      "company": {
+        "name": "FinoPulse",
+        "catchPhrase": "Secure fintech transformation",
+        "bs": "disrupt traditional banking flows"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Isabelle Morgan",
+      "username": "izzyMorgan",
+      "role": "user",
+      "dateOfBirth": "1994-12-30",
+      "email": "isabelle.m@cloudnova.biz",
+      "address": {
+        "street": "Cascade Terrace",
+        "suite": "Apt. 230",
+        "city": "New Berlin",
+        "zipcode": "74120-8899",
+        "geo": { "lat": 41.7852, "lng": -75.9871 }
+      },
+      "phone": "(318) 555-9381",
+      "website": "cloudnova.biz",
+      "company": {
+        "name": "CloudNova",
+        "catchPhrase": "Virtualized infrastructure for scale",
+        "bs": "integrate next-gen cloud solutions"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Trevor Yang",
+      "username": "TrevyY95",
+      "role": "user",
+      "dateOfBirth": "1995-05-16",
+      "email": "trevor.yang@neurofy.io",
+      "address": {
+        "street": "Beacon Circle",
+        "suite": "Suite 778",
+        "city": "Eagleton",
+        "zipcode": "33890-1223",
+        "geo": { "lat": 30.2228, "lng": -122.3345 }
+      },
+      "phone": "907-219-9934 x403",
+      "website": "neurofy.io",
+      "company": {
+        "name": "Neurofy Inc.",
+        "catchPhrase": "AI-driven predictive engines",
+        "bs": "scale intelligent automation"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Anika Patel",
+      "username": "AnikaP",
+      "role": "admin",
+      "dateOfBirth": "1986-01-02",
+      "email": "anika.patel@bitflux.com",
+      "address": {
+        "street": "Maple Pine St.",
+        "suite": "Apt. 442",
+        "city": "Clearview",
+        "zipcode": "58921",
+        "geo": { "lat": 40.1199, "lng": -88.5543 }
+      },
+      "phone": "702-111-9830",
+      "website": "bitflux.com",
+      "company": {
+        "name": "BitFlux",
+        "catchPhrase": "Next-gen blockchain scalability",
+        "bs": "tokenize real-world processes"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Rafael Costa",
+      "username": "RafaC89",
+      "role": "user",
+      "dateOfBirth": "1989-06-19",
+      "email": "rafael.c@orbitix.org",
+      "address": {
+        "street": "Olive Brook Ln",
+        "suite": "Suite 1002",
+        "city": "Hilltown",
+        "zipcode": "23009-0021",
+        "geo": { "lat": -23.765, "lng": -46.623 }
+      },
+      "phone": "903-422-7720",
+      "website": "orbitix.org",
+      "company": {
+        "name": "Orbitix",
+        "catchPhrase": "Orbital satellite data APIs",
+        "bs": "deliver real-time geospatial insights"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Nora Kim",
+      "username": "NoraK88",
+      "role": "admin",
+      "dateOfBirth": "1988-09-07",
+      "email": "nora.kim@logistiq.biz",
+      "address": {
+        "street": "Redwood Road",
+        "suite": "Apt. 335",
+        "city": "Loganview",
+        "zipcode": "11223-7789",
+        "geo": { "lat": 39.1834, "lng": -82.1112 }
+      },
+      "phone": "561-991-2044",
+      "website": "logistiq.biz",
+      "company": {
+        "name": "Logistiq Solutions",
+        "catchPhrase": "End-to-end logistics automation",
+        "bs": "optimize last-mile delivery chains"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Derek Shaw",
+      "username": "DShaw_71",
+      "role": "user",
+      "dateOfBirth": "1971-11-11",
+      "email": "derek.shaw@cyberlens.io",
+      "address": {
+        "street": "Sunset Ave",
+        "suite": "Suite 567",
+        "city": "Westport",
+        "zipcode": "56123-4411",
+        "geo": { "lat": 27.4432, "lng": -90.1123 }
+      },
+      "phone": "1-877-400-8841",
+      "website": "cyberlens.io",
+      "company": {
+        "name": "CyberLens",
+        "catchPhrase": "AI-powered threat detection",
+        "bs": "defend enterprises with smart security"
+      }
     }
   ]
 }
