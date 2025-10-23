@@ -2,13 +2,11 @@ import { flexRender, type Header } from "@tanstack/react-table";
 
 import HeaderSortableButton from "./HeaderSortableButton";
 
-export type SortableTableHeadProps<TData> = {
+export type TableHeadContentProps<TData> = {
   header: Header<TData, unknown>;
 };
 
-const SortableTableHead = <TData,>({
-  header,
-}: SortableTableHeadProps<TData>) => {
+const TableHeadContent = <TData,>({ header }: TableHeadContentProps<TData>) => {
   if (header.isPlaceholder) return null;
 
   const content = flexRender(
@@ -24,4 +22,4 @@ const SortableTableHead = <TData,>({
   );
 };
 
-export default SortableTableHead;
+export default TableHeadContent;

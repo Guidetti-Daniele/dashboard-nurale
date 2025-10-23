@@ -18,69 +18,29 @@ import {
 
 import NoResults from "../molecules/CustomTable/NoResults";
 import PaginationControls from "../molecules/CustomTable/PaginationControls";
-import SortableTableHead from "../molecules/CustomTable/SortableTableHead";
+import TableHeadContent from "../molecules/CustomTable/TableHeadContent";
 
-import type {
-  ColumnDef,
-  ColumnFiltersState,
-  SortingState,
-  PaginationState,
-} from "@tanstack/react-table";
-
-type AllowedStates = {
-  columnFilters: ColumnFiltersState;
-  sorting: SortingState;
-  pagination: PaginationState;
-};
-type AllowedStatesKeys = keyof AllowedStates;
-
-type TableStates = Partial<{
-  [state in AllowedStatesKeys]: AllowedStates[state];
-}>;
-
-type TableSetStates = Partial<{
-  [state in AllowedStatesKeys as `on${Capitalize<state>}Changed`]: React.Dispatch<
-    React.SetStateAction<AllowedStates[state]>
-  >;
-}>;
+import type { ColumnDef } from "@tanstack/react-table";
 
 export type CustomTableProps<TData> = {
   columns: ColumnDef<TData>[];
   data: TData[];
-  tableStates?: TableStates;
-  tableSetStates?: TableSetStates;
   noResultsComp?: React.ReactNode;
 };
 
 const CustomTable = <TData,>({
   columns,
   data,
-  tableStates = {},
-  tableSetStates = {},
   noResultsComp = <NoResults />,
 }: CustomTableProps<TData>) => {
-  function isStateControlled(stateKey: AllowedStatesKeys) {
-    return Object.keys(tableStates).includes(stateKey);
-  }
-
   const table = useReactTable({
     columns,
     data,
     rowCount: data.length,
     getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: isStateControlled("columnFilters")
-      ? getFilteredRowModel()
-      : undefined,
-    // getSortedRowModel: isStateControlled("sorting")
-    //   ? getSortedRowModel()
-    //   : undefined,
-    getPaginationRowModel: isStateControlled("pagination")
-      ? getPaginationRowModel()
-      : undefined,
+    getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
-
-    state: { ...tableStates },
-    ...tableSetStates,
+    getPaginationRowModel: getPaginationRowModel(),
   });
 
   const rows = table.getRowModel().rows;
@@ -98,7 +58,7 @@ const CustomTable = <TData,>({
                   colSpan={header.colSpan}
                   className="border-x text-center"
                 >
-                  <SortableTableHead<TData> header={header} />
+                  <TableHeadContent<TData> header={header} />
                 </TableHead>
               ))}
             </TableRow>
@@ -123,12 +83,7 @@ const CustomTable = <TData,>({
       </Table>
 
       {/* Rendering the pagination controls */}
-      {isStateControlled("pagination") && (
-        <PaginationControls
-          table={table}
-          setPagination={tableSetStates.onPaginationChanged!}
-        />
-      )}
+      <PaginationControls table={table} />
     </div>
   );
 };
