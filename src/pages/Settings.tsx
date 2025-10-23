@@ -1,16 +1,15 @@
 import React, { Suspense } from "react";
 
 import CustomTable from "@/components/organisms/CustomTable";
-import PromiseErrorBoundary from "@/components/molecules/CustomTable/PromiseErrorBoundary";
-
-import { userColumns } from "@/models/tables/UsersTable";
-import { api } from "@/api/axios";
-import { API_ENDPOINTS } from "@/api/constants/endpoints";
+import PromiseErrorBoundary from "@/components/molecules/CustomTable/Fallbacks/PromiseErrorBoundary";
 
 import { Spinner } from "@/components/ui/spinner";
+import { userColumns } from "@/models/tables/UsersTable";
+import { API_ENDPOINTS } from "@/api/constants/endpoints";
+import { api } from "@/api/axios";
 
-import type { ErrorFromPromise } from "@/components/molecules/CustomTable/PromiseErrorBoundary";
 import type { UsersTData } from "@/models/tables/UsersTable";
+import type { ErrorFromPromise } from "@/components/molecules/CustomTable/Fallbacks/PromiseErrorBoundary";
 
 const Settings: React.FC = () => {
   const usersPromise = api

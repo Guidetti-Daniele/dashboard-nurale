@@ -1,6 +1,6 @@
 import { flexRender, type Header } from "@tanstack/react-table";
 
-import HeaderSortableButton from "./HeaderSortableButton";
+import HeaderSortableButton from "./TableHeadSortableButton";
 
 export type TableHeadContentProps<TData> = {
   header: Header<TData, unknown>;

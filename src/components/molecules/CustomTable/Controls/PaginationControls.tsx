@@ -1,20 +1,16 @@
+import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import type { Table } from "@tanstack/react-table";
-import { Button } from "@/components/ui/button";
-
-type PaginationControlsProps<TData> = {
-  table: Table<TData>;
-};
+import type { CustomTableControlProps } from "@/components/organisms/CustomTable";
 
 const PaginationControls = <TData,>({
   table,
-}: PaginationControlsProps<TData>) => {
+}: CustomTableControlProps<TData>) => {
   const currentPage = table.getState().pagination.pageIndex + 1;
   const totalPages = table.getPageCount();
 
   return (
-    <div className="mt-5 flex items-center gap-3">
+    <div className="flex items-center gap-3">
       <Button
         variant="outline"
         onClick={() => table.previousPage()}

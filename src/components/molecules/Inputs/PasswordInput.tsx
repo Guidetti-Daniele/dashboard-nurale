@@ -3,6 +3,8 @@ import { useState, type ComponentPropsWithoutRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Eye, EyeOff } from "lucide-react";
 
+// TODO: Replace the markup with the Input Group component from ShadCN
+
 const PasswordInput: React.FC<ComponentPropsWithoutRef<typeof Input>> = ({
   ...props
 }) => {

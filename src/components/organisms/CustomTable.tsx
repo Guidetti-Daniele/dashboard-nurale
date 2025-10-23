@@ -16,16 +16,21 @@ import {
   TableRow,
 } from "../ui/table";
 
-import NoResults from "../molecules/CustomTable/NoResults";
-import PaginationControls from "../molecules/CustomTable/PaginationControls";
-import TableHeadContent from "../molecules/CustomTable/TableHeadContent";
+import NoResults from "../molecules/CustomTable/Fallbacks/NoResults";
+import TableHeadContent from "../molecules/CustomTable/TableHead/TableHeadContent";
+import PaginationControls from "../molecules/CustomTable/Controls/PaginationControls";
+import FilterTableControls from "../molecules/CustomTable/Controls/FilterTableControls/FilterTableControls";
 
-import type { ColumnDef } from "@tanstack/react-table";
+import type { ColumnDef, Table as TableType } from "@tanstack/react-table";
 
 export type CustomTableProps<TData> = {
   columns: ColumnDef<TData>[];
   data: TData[];
   noResultsComp?: React.ReactNode;
+};
+
+export type CustomTableControlProps<TData> = {
+  table: TableType<TData>;
 };
 
 const CustomTable = <TData,>({
@@ -46,8 +51,11 @@ const CustomTable = <TData,>({
   const rows = table.getRowModel().rows;
 
   return (
-    <div>
-      {/* Rendering the table */}
+    <div className="flex flex-col gap-5">
+      {/* Filter menu controls */}
+      <FilterTableControls table={table} />
+
+      {/* Table */}
       <Table className="border">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -82,7 +90,7 @@ const CustomTable = <TData,>({
         </TableBody>
       </Table>
 
-      {/* Rendering the pagination controls */}
+      {/* Pagination controls */}
       <PaginationControls table={table} />
     </div>
   );

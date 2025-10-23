@@ -2,7 +2,7 @@ import { ArrowUp, ArrowDown, ArrowUpDown } from "lucide-react";
 
 import type { TableHeadContentProps } from "./TableHeadContent";
 
-const HeaderSortableButton = <TData,>({
+const TableHeadSortableButton = <TData,>({
   header,
 }: TableHeadContentProps<TData>) => {
   const isSorted = header.column.getIsSorted();
@@ -24,4 +24,4 @@ const HeaderSortableButton = <TData,>({
   );
 };
 
-export default HeaderSortableButton;
+export default TableHeadSortableButton;
