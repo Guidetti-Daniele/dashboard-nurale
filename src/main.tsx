@@ -2,7 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-import "@tanstack/react-table"; //or vue, svelte, solid, qwik, etc.
+
+import "@tanstack/react-table";
 import type { Column, RowData } from "@tanstack/react-table";
 
 declare module "@tanstack/react-table" {
