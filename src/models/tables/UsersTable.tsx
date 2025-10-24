@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { createColumnHelper, type ColumnDef } from "@tanstack/react-table";
 
-import FilterColumnInputField from "@/components/molecules/CustomTable/Controls/FilterTableControls/Inputs/FilterColumnInputField";
+import { FilterColumnInputField } from "@/components";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const usersTDataModel = z.object({
