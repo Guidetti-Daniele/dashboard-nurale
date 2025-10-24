@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { createColumnHelper, type ColumnDef } from "@tanstack/react-table";
 
-import FilterColumnTextInput from "@/components/molecules/CustomTable/Controls/FilterTableControls/Inputs/FilterColumnTextInput";
+import FilterColumnInputField from "@/components/molecules/CustomTable/Controls/FilterTableControls/Inputs/FilterColumnInputField";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const usersTDataModel = z.object({
@@ -37,9 +37,10 @@ const columnHelper = createColumnHelper<UsersTData>();
 export const userColumns: ColumnDef<UsersTData>[] = [
   columnHelper.accessor("id", {
     header: "Id",
+    filterFn: "equals",
     meta: {
       filterComponentFunction: (column) => (
-        <FilterColumnTextInput column={column} />
+        <FilterColumnInputField column={column} type="text" />
       ),
     },
   }),
@@ -47,7 +48,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
     header: "Nominativo",
     meta: {
       filterComponentFunction: (column) => (
-        <FilterColumnTextInput column={column} />
+        <FilterColumnInputField column={column} type="text" />
       ),
     },
   }),
@@ -55,7 +56,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
     header: "Username",
     meta: {
       filterComponentFunction: (column) => (
-        <FilterColumnTextInput column={column} />
+        <FilterColumnInputField column={column} type="text" />
       ),
     },
   }),
@@ -63,7 +64,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
     header: "Ruolo",
     meta: {
       filterComponentFunction: (column) => (
-        <FilterColumnTextInput column={column} />
+        <FilterColumnInputField column={column} type="text" />
       ),
     },
   }),
@@ -71,7 +72,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
     header: "Data di nascita",
     meta: {
       filterComponentFunction: (column) => (
-        <FilterColumnTextInput column={column} />
+        <FilterColumnInputField column={column} type="text" />
       ),
     },
   }),
@@ -79,7 +80,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
     header: "Email",
     meta: {
       filterComponentFunction: (column) => (
-        <FilterColumnTextInput column={column} />
+        <FilterColumnInputField column={column} type="text" />
       ),
     },
   }),
@@ -91,7 +92,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
         header: "Via",
         meta: {
           filterComponentFunction: (column) => (
-            <FilterColumnTextInput column={column} />
+            <FilterColumnInputField column={column} type="text" />
           ),
         },
       }),
@@ -99,7 +100,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
         header: "Numero civico",
         meta: {
           filterComponentFunction: (column) => (
-            <FilterColumnTextInput column={column} />
+            <FilterColumnInputField column={column} type="text" />
           ),
         },
       }),
@@ -107,7 +108,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
         header: "Città",
         meta: {
           filterComponentFunction: (column) => (
-            <FilterColumnTextInput column={column} />
+            <FilterColumnInputField column={column} type="text" />
           ),
         },
       }),
@@ -115,7 +116,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
         header: "Codice postale",
         meta: {
           filterComponentFunction: (column) => (
-            <FilterColumnTextInput column={column} />
+            <FilterColumnInputField column={column} type="text" />
           ),
         },
       }),
@@ -127,7 +128,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
             header: "Lat.",
             meta: {
               filterComponentFunction: (column) => (
-                <FilterColumnTextInput column={column} />
+                <FilterColumnInputField column={column} type="text" />
               ),
             },
           }),
@@ -135,7 +136,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
             header: "Lon.",
             meta: {
               filterComponentFunction: (column) => (
-                <FilterColumnTextInput column={column} />
+                <FilterColumnInputField column={column} type="text" />
               ),
             },
           }),
@@ -147,7 +148,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
     header: "Telefono",
     meta: {
       filterComponentFunction: (column) => (
-        <FilterColumnTextInput column={column} />
+        <FilterColumnInputField column={column} type="text" />
       ),
     },
   }),
@@ -155,7 +156,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
     header: "Sito web",
     meta: {
       filterComponentFunction: (column) => (
-        <FilterColumnTextInput column={column} />
+        <FilterColumnInputField column={column} type="text" />
       ),
     },
   }),
@@ -167,7 +168,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
         header: "Nome",
         meta: {
           filterComponentFunction: (column) => (
-            <FilterColumnTextInput column={column} />
+            <FilterColumnInputField column={column} type="text" />
           ),
         },
       }),
@@ -176,7 +177,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
         enableSorting: false,
         meta: {
           filterComponentFunction: (column) => (
-            <FilterColumnTextInput column={column} />
+            <FilterColumnInputField column={column} type="text" />
           ),
         },
       }),
@@ -185,7 +186,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
         enableSorting: false,
         meta: {
           filterComponentFunction: (column) => (
-            <FilterColumnTextInput column={column} />
+            <FilterColumnInputField column={column} type="text" />
           ),
         },
       }),
