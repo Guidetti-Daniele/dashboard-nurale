@@ -1,9 +1,451 @@
 {
-  "users": [
+  "accounts": [
     {
       "id": 1,
       "username": "john",
       "password": "doe"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "role": "admin",
+      "dateOfBirth": "1985-06-15",
+      "email": "Sincere@april.biz",
+      "address": {
+        "street": "Kulas Light",
+        "suite": "Apt. 556",
+        "city": "Gwenborough",
+        "zipcode": "92998-3874",
+        "geo": { "lat": -37.3159, "lng": 81.1496 }
+      },
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org",
+      "company": {
+        "name": "Romaguera-Crona",
+        "catchPhrase": "Multi-layered client-server neural-net",
+        "bs": "harness real-time e-markets"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "role": "user",
+      "dateOfBirth": "1990-11-23",
+      "email": "Shanna@melissa.tv",
+      "address": {
+        "street": "Victor Plains",
+        "suite": "Suite 879",
+        "city": "Wisokyburgh",
+        "zipcode": "90566-7771",
+        "geo": { "lat": -43.9509, "lng": -34.4618 }
+      },
+      "phone": "010-692-6593 x09125",
+      "website": "anastasia.net",
+      "company": {
+        "name": "Deckow-Crist",
+        "catchPhrase": "Proactive didactic contingency",
+        "bs": "synergize scalable supply-chains"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "role": "user",
+      "dateOfBirth": "1978-03-12",
+      "email": "Nathan@yesenia.net",
+      "address": {
+        "street": "Douglas Extension",
+        "suite": "Suite 847",
+        "city": "McKenziehaven",
+        "zipcode": "59590-4157",
+        "geo": { "lat": -68.6102, "lng": -47.0653 }
+      },
+      "phone": "1-463-123-4447",
+      "website": "ramiro.info",
+      "company": {
+        "name": "Romaguera-Jacobson",
+        "catchPhrase": "Face to face bifurcated interface",
+        "bs": "e-enable strategic applications"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Patricia Lebsack",
+      "username": "Karianne",
+      "role": "admin",
+      "dateOfBirth": "1982-07-30",
+      "email": "Julianne.OConner@kory.org",
+      "address": {
+        "street": "Hoeger Mall",
+        "suite": "Apt. 692",
+        "city": "South Elvis",
+        "zipcode": "53919-4257",
+        "geo": { "lat": 29.4572, "lng": -164.299 }
+      },
+      "phone": "493-170-9623 x156",
+      "website": "kale.biz",
+      "company": {
+        "name": "Robel-Corkery",
+        "catchPhrase": "Multi-tiered zero tolerance productivity",
+        "bs": "transition cutting-edge web services"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Chelsey Dietrich",
+      "username": "Kamren",
+      "role": "user",
+      "dateOfBirth": "1995-01-10",
+      "email": "Lucio_Hettinger@annie.ca",
+      "address": {
+        "street": "Skiles Walks",
+        "suite": "Suite 351",
+        "city": "Roscoeview",
+        "zipcode": "33263",
+        "geo": { "lat": -31.8129, "lng": 62.5342 }
+      },
+      "phone": "(254)954-1289",
+      "website": "demarco.info",
+      "company": {
+        "name": "Keebler LLC",
+        "catchPhrase": "User-centric fault-tolerant solution",
+        "bs": "revolutionize end-to-end systems"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Mrs. Dennis Schulist",
+      "username": "Leopoldo_Corkery",
+      "role": "user",
+      "dateOfBirth": "1988-04-17",
+      "email": "Karley_Dach@jasper.info",
+      "address": {
+        "street": "Norberto Crossing",
+        "suite": "Apt. 950",
+        "city": "South Christy",
+        "zipcode": "23505-1337",
+        "geo": { "lat": -71.4197, "lng": 71.7478 }
+      },
+      "phone": "1-477-935-8478 x6430",
+      "website": "ola.org",
+      "company": {
+        "name": "Considine-Lockman",
+        "catchPhrase": "Synchronised bottom-line interface",
+        "bs": "e-enable innovative applications"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Kurtis Weissnat",
+      "username": "Elwyn.Skiles",
+      "role": "admin",
+      "dateOfBirth": "1976-09-05",
+      "email": "Telly.Hoeger@billy.biz",
+      "address": {
+        "street": "Rex Trail",
+        "suite": "Suite 280",
+        "city": "Howemouth",
+        "zipcode": "58804-1099",
+        "geo": { "lat": 24.8918, "lng": 21.8984 }
+      },
+      "phone": "210.067.6132",
+      "website": "elvis.io",
+      "company": {
+        "name": "Johns Group",
+        "catchPhrase": "Configurable multimedia task-force",
+        "bs": "generate enterprise e-tailers"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Nicholas Runolfsdottir V",
+      "username": "Maxime_Nienow",
+      "role": "user",
+      "dateOfBirth": "1989-10-21",
+      "email": "Sherwood@rosamond.me",
+      "address": {
+        "street": "Ellsworth Summit",
+        "suite": "Suite 729",
+        "city": "Aliyaview",
+        "zipcode": "45169",
+        "geo": { "lat": -14.399, "lng": -120.7677 }
+      },
+      "phone": "586.493.6943 x140",
+      "website": "jacynthe.com",
+      "company": {
+        "name": "Abernathy Group",
+        "catchPhrase": "Implemented secondary concept",
+        "bs": "e-enable extensible e-tailers"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Glenna Reichert",
+      "username": "Delphine",
+      "role": "admin",
+      "dateOfBirth": "1971-12-03",
+      "email": "Chaim_McDermott@dana.io",
+      "address": {
+        "street": "Dayna Park",
+        "suite": "Suite 449",
+        "city": "Bartholomebury",
+        "zipcode": "76495-3109",
+        "geo": { "lat": 24.6463, "lng": -168.8889 }
+      },
+      "phone": "(775)976-6794 x41206",
+      "website": "conrad.com",
+      "company": {
+        "name": "Yost and Sons",
+        "catchPhrase": "Switchable contextually-based project",
+        "bs": "aggregate real-time technologies"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Clementina DuBuque",
+      "username": "Moriah.Stanton",
+      "role": "user",
+      "dateOfBirth": "1986-07-14",
+      "email": "Rey.Padberg@karina.biz",
+      "address": {
+        "street": "Kattie Turnpike",
+        "suite": "Suite 198",
+        "city": "Lebsackbury",
+        "zipcode": "31428-2261",
+        "geo": { "lat": -38.2386, "lng": 57.2232 }
+      },
+      "phone": "024-648-3804",
+      "website": "ambrose.net",
+      "company": {
+        "name": "Hoeger LLC",
+        "catchPhrase": "Centralized empowering task-force",
+        "bs": "target end-to-end models"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Marissa Ortiz",
+      "username": "MarOrt88",
+      "role": "user",
+      "dateOfBirth": "1991-03-22",
+      "email": "marissa.ortiz@zonerail.com",
+      "address": {
+        "street": "Holloway Avenue",
+        "suite": "Apt. 120",
+        "city": "Springville",
+        "zipcode": "67123",
+        "geo": { "lat": 35.2321, "lng": -95.8721 }
+      },
+      "phone": "489-123-9832 x321",
+      "website": "zonerail.net",
+      "company": {
+        "name": "Zonerail Ltd.",
+        "catchPhrase": "Rapid deployment software matrix",
+        "bs": "empower ubiquitous convergence"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Brian Chen",
+      "username": "brianc92",
+      "role": "admin",
+      "dateOfBirth": "1983-08-17",
+      "email": "brian.chen@cogitronix.io",
+      "address": {
+        "street": "Neptune Blvd",
+        "suite": "Suite 342",
+        "city": "Riverside",
+        "zipcode": "20987-4321",
+        "geo": { "lat": 42.9176, "lng": -83.2193 }
+      },
+      "phone": "312-848-5509",
+      "website": "cogitronix.io",
+      "company": {
+        "name": "Cogitronix",
+        "catchPhrase": "Cloud-native microservices architecture",
+        "bs": "leverage decentralized ecosystems"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Linda Alvarez",
+      "username": "LAlva22",
+      "role": "user",
+      "dateOfBirth": "1979-02-09",
+      "email": "linda.alvarez@vebotech.com",
+      "address": {
+        "street": "Orchid Lane",
+        "suite": "Apt. 904",
+        "city": "Brookview",
+        "zipcode": "90872",
+        "geo": { "lat": 28.9942, "lng": -97.4456 }
+      },
+      "phone": "1-800-444-9832",
+      "website": "vebotech.com",
+      "company": {
+        "name": "VeboTech",
+        "catchPhrase": "Automated analytics pipeline",
+        "bs": "streamline data-driven decisions"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Jamal Greene",
+      "username": "JamalG2020",
+      "role": "admin",
+      "dateOfBirth": "1980-10-01",
+      "email": "jamal.greene@finopulse.org",
+      "address": {
+        "street": "Elm Ridge Road",
+        "suite": "Suite 501",
+        "city": "Northgrove",
+        "zipcode": "12980-2834",
+        "geo": { "lat": 36.7891, "lng": -112.3374 }
+      },
+      "phone": "403-546-2209",
+      "website": "finopulse.org",
+      "company": {
+        "name": "FinoPulse",
+        "catchPhrase": "Secure fintech transformation",
+        "bs": "disrupt traditional banking flows"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Isabelle Morgan",
+      "username": "izzyMorgan",
+      "role": "user",
+      "dateOfBirth": "1994-12-30",
+      "email": "isabelle.m@cloudnova.biz",
+      "address": {
+        "street": "Cascade Terrace",
+        "suite": "Apt. 230",
+        "city": "New Berlin",
+        "zipcode": "74120-8899",
+        "geo": { "lat": 41.7852, "lng": -75.9871 }
+      },
+      "phone": "(318) 555-9381",
+      "website": "cloudnova.biz",
+      "company": {
+        "name": "CloudNova",
+        "catchPhrase": "Virtualized infrastructure for scale",
+        "bs": "integrate next-gen cloud solutions"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Trevor Yang",
+      "username": "TrevyY95",
+      "role": "user",
+      "dateOfBirth": "1995-05-16",
+      "email": "trevor.yang@neurofy.io",
+      "address": {
+        "street": "Beacon Circle",
+        "suite": "Suite 778",
+        "city": "Eagleton",
+        "zipcode": "33890-1223",
+        "geo": { "lat": 30.2228, "lng": -122.3345 }
+      },
+      "phone": "907-219-9934 x403",
+      "website": "neurofy.io",
+      "company": {
+        "name": "Neurofy Inc.",
+        "catchPhrase": "AI-driven predictive engines",
+        "bs": "scale intelligent automation"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Anika Patel",
+      "username": "AnikaP",
+      "role": "admin",
+      "dateOfBirth": "1986-01-02",
+      "email": "anika.patel@bitflux.com",
+      "address": {
+        "street": "Maple Pine St.",
+        "suite": "Apt. 442",
+        "city": "Clearview",
+        "zipcode": "58921",
+        "geo": { "lat": 40.1199, "lng": -88.5543 }
+      },
+      "phone": "702-111-9830",
+      "website": "bitflux.com",
+      "company": {
+        "name": "BitFlux",
+        "catchPhrase": "Next-gen blockchain scalability",
+        "bs": "tokenize real-world processes"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Rafael Costa",
+      "username": "RafaC89",
+      "role": "user",
+      "dateOfBirth": "1989-06-19",
+      "email": "rafael.c@orbitix.org",
+      "address": {
+        "street": "Olive Brook Ln",
+        "suite": "Suite 1002",
+        "city": "Hilltown",
+        "zipcode": "23009-0021",
+        "geo": { "lat": -23.765, "lng": -46.623 }
+      },
+      "phone": "903-422-7720",
+      "website": "orbitix.org",
+      "company": {
+        "name": "Orbitix",
+        "catchPhrase": "Orbital satellite data APIs",
+        "bs": "deliver real-time geospatial insights"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Nora Kim",
+      "username": "NoraK88",
+      "role": "admin",
+      "dateOfBirth": "1988-09-07",
+      "email": "nora.kim@logistiq.biz",
+      "address": {
+        "street": "Redwood Road",
+        "suite": "Apt. 335",
+        "city": "Loganview",
+        "zipcode": "11223-7789",
+        "geo": { "lat": 39.1834, "lng": -82.1112 }
+      },
+      "phone": "561-991-2044",
+      "website": "logistiq.biz",
+      "company": {
+        "name": "Logistiq Solutions",
+        "catchPhrase": "End-to-end logistics automation",
+        "bs": "optimize last-mile delivery chains"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Derek Shaw",
+      "username": "DShaw_71",
+      "role": "user",
+      "dateOfBirth": "1971-11-11",
+      "email": "derek.shaw@cyberlens.io",
+      "address": {
+        "street": "Sunset Ave",
+        "suite": "Suite 567",
+        "city": "Westport",
+        "zipcode": "56123-4411",
+        "geo": { "lat": 27.4432, "lng": -90.1123 }
+      },
+      "phone": "1-877-400-8841",
+      "website": "cyberlens.io",
+      "company": {
+        "name": "CyberLens",
+        "catchPhrase": "AI-powered threat detection",
+        "bs": "defend enterprises with smart security"
+      }
     }
   ]
 }

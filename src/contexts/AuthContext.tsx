@@ -15,7 +15,7 @@ export const AuthContext = createContext<AuthContextType | undefined>(
   undefined
 );
 
-const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
+export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [auth, setAuth] = useState<Auth>({
     isAuthenticated: false,
     username: "",
@@ -27,5 +27,3 @@ const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
-export default AuthProvider;

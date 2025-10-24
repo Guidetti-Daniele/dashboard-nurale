@@ -1,15 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import ProtectedRoutes from "./components/ProtectedRoutes";
-import { ROUTE_PATHS } from "./constants/routes";
 
-import AuthProvider from "./contexts/AuthContext";
-
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Inbox from "./pages/Inbox";
-import Calendar from "./pages/Calendar";
-import Search from "./pages/Search";
-import Settings from "./pages/Settings";
+import { ProtectedRoutes, ROUTE_PATHS } from "./routing";
+import { AuthProvider } from "./contexts";
+import { Home, Inbox, Calendar, Search, Settings, Login } from "./pages";
 
 function App() {
   return (
