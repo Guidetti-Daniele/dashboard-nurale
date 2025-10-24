@@ -1,11 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 
-import {
-  CustomTable,
-  PromiseErrorBoundary,
-  Spinner,
-  type ErrorFromPromise,
-} from "@/components";
+import { AsyncCustomTable, type ErrorFromPromise } from "@/components";
 
 import { api, API_ENDPOINTS } from "@/api";
 import { userColumns, type UsersTData } from "@/models";
@@ -19,13 +14,8 @@ export const Settings: React.FC = () => {
     });
 
   return (
-    <Suspense fallback={<Spinner className="size-8" />}>
-      <PromiseErrorBoundary<UsersTData[]>
-        dataPromise={usersPromise}
-        renderChildren={(data) => (
-          <CustomTable columns={userColumns} data={data} />
-        )}
-      />
-    </Suspense>
+    <>
+      <AsyncCustomTable dataPromise={usersPromise} columns={userColumns} />
+    </>
   );
 };

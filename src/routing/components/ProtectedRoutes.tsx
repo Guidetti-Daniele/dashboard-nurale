@@ -23,7 +23,7 @@ export const ProtectedRoutes: React.FC = () => {
       </section>
 
       {/* Pages */}
-      <section className=" p-4">
+      <section className="grow p-4">
         <Outlet />
       </section>
     </SidebarProvider>

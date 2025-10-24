@@ -18,8 +18,9 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({
 
   return (
     <div
+      data-error
       className={cn(
-        "min-h-fit rounded-md py-10 px-5 flex flex-col gap-6 items-center bg-error text-error-foreground text-md",
+        "min-h-fit rounded-lg py-10 px-5 flex flex-col gap-6 items-center text-error-foreground text-md",
         classname
       )}
     >

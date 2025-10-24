@@ -23,6 +23,7 @@ export * from "./CustomTable/molecules/FilterColumnInput";
 export * from "./CustomTable/atoms/TableBodyNoResults";
 export * from "./CustomTable/molecules/TableHeadContent";
 
+export * from "./CustomTable/organisms/AsyncCustomTable";
 export * from "./CustomTable/organisms/CustomTable";
 export * from "./CustomTable/organisms/FilterTableControls";
 export * from "./CustomTable/organisms/PaginationControls";
