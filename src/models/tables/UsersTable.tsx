@@ -36,7 +36,11 @@ export const userColumns: ColumnDef<UsersTData>[] = [
   columnHelper.accessor("id", {
     header: "Id",
     filterFn: "equals",
+    enableHiding: true,
     enableGlobalFilter: false,
+    meta: {
+      hidden: true,
+    },
   }),
   columnHelper.accessor("name", {
     header: "Nominativo",

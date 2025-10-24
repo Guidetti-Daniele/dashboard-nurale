@@ -59,6 +59,14 @@ export const CustomTable = <TData,>({
   const rows = table.getRowModel().rows;
 
   useEffect(() => {
+    // Hiding columns set to hidden by default from the meta object of columnDef.
+    table.getAllColumns().forEach((col) => {
+      if (col.getCanHide() && col.columnDef.meta?.hidden)
+        col.toggleVisibility(false);
+    });
+  }, []);
+
+  useEffect(() => {
     // Calculating the number of pages needed to show the filtered data
     const { pageSize } = table.getState().pagination;
     const neededPages = Math.ceil(filteredRows.length / pageSize);

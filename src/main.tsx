@@ -8,7 +8,10 @@ import type { Column, RowData } from "@tanstack/react-table";
 
 declare module "@tanstack/react-table" {
   interface ColumnMeta<TData extends RowData, TValue> {
-    filterComponentFunction: (column: Column<TData, TValue>) => React.ReactNode;
+    hidden?: boolean;
+    filterComponentFunction?: (
+      column: Column<TData, TValue>
+    ) => React.ReactNode;
   }
 }
 

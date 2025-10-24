@@ -13,5 +13,10 @@ export const Settings: React.FC = () => {
       return { error } as ErrorFromPromise;
     });
 
-  return <AsyncCustomTable dataPromise={usersPromise} columns={userColumns} />;
+  return (
+    <AsyncCustomTable<UsersTData>
+      dataPromise={usersPromise}
+      columns={userColumns}
+    />
+  );
 };
