@@ -5,7 +5,7 @@ import {
   GlobalFilterInput,
   FilterColumnInput,
   CustomAccordion,
-  type CustomTableControlProps,
+  type GlobalFilterInputProps,
 } from "@/components";
 
 type FilterMenuProps<TData> = {
@@ -62,11 +62,17 @@ const FilterMenuTrigger: React.FC = () => {
 
 export const FilterTableControls = <TData,>({
   table,
-}: CustomTableControlProps<TData>) => {
+  globalFilter,
+  setGlobalFilter,
+}: GlobalFilterInputProps<TData>) => {
   return (
     <>
       {/* Global Filter Input */}
-      <GlobalFilterInput table={table} />
+      <GlobalFilterInput
+        table={table}
+        globalFilter={globalFilter}
+        setGlobalFilter={setGlobalFilter}
+      />
       {/* <CustomAccordion
         type="single"
         collapsible={true}

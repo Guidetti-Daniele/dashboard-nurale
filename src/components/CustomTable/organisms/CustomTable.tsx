@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import {
   flexRender,
   getCoreRowModel,
@@ -6,7 +8,6 @@ import {
   getSortedRowModel,
   useReactTable,
   type ColumnDef,
-  type Table as TableType,
 } from "@tanstack/react-table";
 
 import {
@@ -27,14 +28,12 @@ export type CustomTableProps<TData> = {
   data: TData[];
 };
 
-export type CustomTableControlProps<TData> = {
-  table: TableType<TData>;
-};
-
 export const CustomTable = <TData,>({
   columns,
   data,
 }: CustomTableProps<TData>) => {
+  const [globalFilter, setGlobalFilter] = useState<string>("");
+
   const table = useReactTable({
     columns,
     data,
@@ -43,14 +42,33 @@ export const CustomTable = <TData,>({
     getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+
+    state: {
+      globalFilter,
+    },
+    onGlobalFilterChange: setGlobalFilter,
   });
 
+  const filteredRows = table.getFilteredRowModel().rows;
   const rows = table.getRowModel().rows;
+
+  useEffect(() => {
+    // Calculating the number of pages needed to show the filtered data
+    const { pageSize } = table.getState().pagination;
+    const neededPages = Math.ceil(filteredRows.length / pageSize);
+
+    table.setOptions((prev) => ({ ...prev, pageCount: neededPages }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredRows]);
 
   return (
     <div className="flex flex-col gap-5 overflow-auto">
       {/* Filter menu controls */}
-      <FilterTableControls table={table} />
+      <FilterTableControls
+        table={table}
+        globalFilter={globalFilter}
+        setGlobalFilter={setGlobalFilter}
+      />
 
       {/* Table */}
       <Table className="border">
@@ -87,7 +105,7 @@ export const CustomTable = <TData,>({
       </Table>
 
       {/* Pagination controls */}
-      <PaginationControls table={table} />
+      {table.getPageCount() ? <PaginationControls table={table} /> : null}
     </div>
   );
 };

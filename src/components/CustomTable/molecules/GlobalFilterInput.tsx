@@ -5,14 +5,23 @@ import {
   TooltipTrigger,
   Badge,
   InputGroup,
-  type CustomTableControlProps,
   InputGroupInput,
   InputGroupAddon,
 } from "@/components";
 
+import type { Table } from "@tanstack/react-table";
+
+export type GlobalFilterInputProps<TData> = {
+  table: Table<TData>;
+  globalFilter: string;
+  setGlobalFilter: React.Dispatch<React.SetStateAction<string>>;
+};
+
 export const GlobalFilterInput = <TData,>({
   table,
-}: CustomTableControlProps<TData>) => {
+  globalFilter,
+  setGlobalFilter,
+}: GlobalFilterInputProps<TData>) => {
   const globalFilterableColumns = table
     .getAllLeafColumns()
     .filter((col) => col.getCanGlobalFilter());
@@ -24,8 +33,8 @@ export const GlobalFilterInput = <TData,>({
           <InputGroupInput
             type="text"
             placeholder="Filtro globale..."
-            value={table.getState().globalFilter}
-            onChange={(event) => table.setGlobalFilter(event.target.value)}
+            value={globalFilter}
+            onChange={(event) => setGlobalFilter(event.target.value)}
           />
           <InputGroupAddon>
             <Search />
