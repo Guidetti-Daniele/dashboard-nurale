@@ -56,7 +56,6 @@ export const MainSidebar: React.FC = () => {
             ))}
           </SidebarMenu>
         </SidebarGroup>
-        <SidebarGroup></SidebarGroup>
       </SidebarContent>
     </Sidebar>
   );

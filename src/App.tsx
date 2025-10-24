@@ -9,7 +9,6 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          {/* Routes that require login go down below */}
           <Route element={<ProtectedRoutes />}>
             <Route path={ROUTE_PATHS.home} element={<Home />} />
             <Route path={ROUTE_PATHS.inbox} element={<Inbox />} />

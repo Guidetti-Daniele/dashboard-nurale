@@ -7,5 +7,5 @@ export type FilterColumnInputProps<TData> = {
 export const FilterColumnInput = <TData,>({
   column,
 }: FilterColumnInputProps<TData>) => {
-  return <>{column.columnDef.meta?.filterComponentFunction(column)}</>;
+  return column.columnDef.meta?.filterComponentFunction(column);
 };
