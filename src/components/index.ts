@@ -11,6 +11,9 @@ export * from "./ui/skeleton";
 export * from "./ui/spinner";
 export * from "./ui/table";
 export * from "./ui/tooltip";
+export * from "./ui/badge";
+export * from "./ui/input-group";
+export * from "./ui/textarea";
 
 // Exporting CustomAccordion
 export * from "./CustomAccordion/CustomAccordion";
@@ -19,6 +22,7 @@ export * from "./CustomAccordion/CustomAccordion";
 export * from "./CustomTable/atoms/FilterColumnInputField";
 export * from "./CustomTable/atoms/TableHeadSortableButton";
 
+export * from "./CustomTable/molecules/GlobalFilterInput";
 export * from "./CustomTable/molecules/FilterColumnInput";
 export * from "./CustomTable/atoms/TableBodyNoResults";
 export * from "./CustomTable/molecules/TableHeadContent";

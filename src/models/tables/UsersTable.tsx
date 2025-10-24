@@ -38,6 +38,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
   columnHelper.accessor("id", {
     header: "Id",
     filterFn: "equals",
+    enableGlobalFilter: false,
     meta: {
       filterComponentFunction: (column) => (
         <FilterColumnInputField column={column} type="text" />
@@ -62,6 +63,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
   }),
   columnHelper.accessor("role", {
     header: "Ruolo",
+    enableGlobalFilter: false,
     meta: {
       filterComponentFunction: (column) => (
         <FilterColumnInputField column={column} type="text" />
@@ -70,6 +72,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
   }),
   columnHelper.accessor("dateOfBirth", {
     header: "Data di nascita",
+    enableGlobalFilter: false,
     meta: {
       filterComponentFunction: (column) => (
         <FilterColumnInputField column={column} type="text" />
@@ -86,10 +89,12 @@ export const userColumns: ColumnDef<UsersTData>[] = [
   }),
   columnHelper.group({
     id: "address",
+    enableGlobalFilter: false,
     header: "Indirizzo",
     columns: [
       columnHelper.accessor("address.street", {
         header: "Via",
+        enableGlobalFilter: false,
         meta: {
           filterComponentFunction: (column) => (
             <FilterColumnInputField column={column} type="text" />
@@ -98,6 +103,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
       }),
       columnHelper.accessor("address.suite", {
         header: "Numero civico",
+        enableGlobalFilter: false,
         meta: {
           filterComponentFunction: (column) => (
             <FilterColumnInputField column={column} type="text" />
@@ -106,6 +112,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
       }),
       columnHelper.accessor("address.city", {
         header: "Città",
+        enableGlobalFilter: false,
         meta: {
           filterComponentFunction: (column) => (
             <FilterColumnInputField column={column} type="text" />
@@ -114,6 +121,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
       }),
       columnHelper.accessor("address.zipcode", {
         header: "Codice postale",
+        enableGlobalFilter: false,
         meta: {
           filterComponentFunction: (column) => (
             <FilterColumnInputField column={column} type="text" />
@@ -122,10 +130,12 @@ export const userColumns: ColumnDef<UsersTData>[] = [
       }),
       columnHelper.group({
         id: "address.geo",
+        enableGlobalFilter: false,
         header: "Coordinate",
         columns: [
           columnHelper.accessor("address.geo.lat", {
             header: "Lat.",
+            enableGlobalFilter: false,
             meta: {
               filterComponentFunction: (column) => (
                 <FilterColumnInputField column={column} type="text" />
@@ -134,6 +144,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
           }),
           columnHelper.accessor("address.geo.lng", {
             header: "Lon.",
+            enableGlobalFilter: false,
             meta: {
               filterComponentFunction: (column) => (
                 <FilterColumnInputField column={column} type="text" />
@@ -146,6 +157,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
   }),
   columnHelper.accessor("phone", {
     header: "Telefono",
+    enableGlobalFilter: false,
     meta: {
       filterComponentFunction: (column) => (
         <FilterColumnInputField column={column} type="text" />
@@ -154,6 +166,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
   }),
   columnHelper.accessor("website", {
     header: "Sito web",
+    enableGlobalFilter: false,
     meta: {
       filterComponentFunction: (column) => (
         <FilterColumnInputField column={column} type="text" />
@@ -163,9 +176,11 @@ export const userColumns: ColumnDef<UsersTData>[] = [
   columnHelper.group({
     id: "company",
     header: "Azienda",
+    enableGlobalFilter: false,
     columns: [
       columnHelper.accessor("company.name", {
         header: "Nome",
+        enableGlobalFilter: false,
         meta: {
           filterComponentFunction: (column) => (
             <FilterColumnInputField column={column} type="text" />
@@ -174,6 +189,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
       }),
       columnHelper.accessor("company.catchPhrase", {
         header: "Slogan",
+        enableGlobalFilter: false,
         enableSorting: false,
         meta: {
           filterComponentFunction: (column) => (
@@ -183,6 +199,7 @@ export const userColumns: ColumnDef<UsersTData>[] = [
       }),
       columnHelper.accessor("company.bs", {
         header: "Mission",
+        enableGlobalFilter: false,
         enableSorting: false,
         meta: {
           filterComponentFunction: (column) => (

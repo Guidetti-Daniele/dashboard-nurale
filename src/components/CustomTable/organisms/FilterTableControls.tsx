@@ -2,6 +2,7 @@ import { ListFilter } from "lucide-react";
 import type { Column } from "@tanstack/react-table";
 
 import {
+  GlobalFilterInput,
   FilterColumnInput,
   CustomAccordion,
   type CustomTableControlProps,
@@ -63,15 +64,19 @@ export const FilterTableControls = <TData,>({
   table,
 }: CustomTableControlProps<TData>) => {
   return (
-    <CustomAccordion
-      type="single"
-      collapsible={true}
-      items={[
-        {
-          triggerNode: <FilterMenuTrigger />,
-          contentNode: <FilterMenu<TData> columns={table.getAllColumns()} />,
-        },
-      ]}
-    />
+    <>
+      {/* Global Filter Input */}
+      <GlobalFilterInput table={table} />
+      {/* <CustomAccordion
+        type="single"
+        collapsible={true}
+        items={[
+          {
+            triggerNode: <FilterMenuTrigger />,
+            contentNode: <FilterMenu<TData> columns={table.getAllColumns()} />,
+          },
+        ]}
+      /> */}
+    </>
   );
 };
