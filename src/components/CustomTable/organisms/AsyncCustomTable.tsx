@@ -18,7 +18,8 @@ export const AsyncCustomTable = <TData,>({
   columns,
 }: AsyncCustomTableProps<TData>) => {
   return (
-    <section className="w-full p-2 flex justify-center items-center rounded-lg shadow has-[[data-error]]:bg-error has-[[data-spinner]]:h-[400px]">
+    <section className="flex justify-center items-center rounded-lg p-2 shadow has-[[data-error]]:bg-error has-[[data-spinner]]:h-[400px]">
+      {/* It would be better a custom skeleton for the table instead of a spinner */}
       <Suspense fallback={<Spinner data-spinner className="size-8" />}>
         <PromiseErrorBoundary<TData[]>
           dataPromise={dataPromise}

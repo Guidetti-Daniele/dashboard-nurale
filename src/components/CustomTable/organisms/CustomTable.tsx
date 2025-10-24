@@ -48,7 +48,7 @@ export const CustomTable = <TData,>({
   const rows = table.getRowModel().rows;
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 overflow-auto">
       {/* Filter menu controls */}
       <FilterTableControls table={table} />
 
