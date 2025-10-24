@@ -15,10 +15,15 @@ export const ProtectedRoutes: React.FC = () => {
   } = useAuth();
 
   return isAuthenticated ? (
-    <SidebarProvider className="w-screen min-h-screen p-1.5 flex">
+    <SidebarProvider>
+      {/* Sidebar */}
       <MainSidebar />
-      <section className="basis-full p-2">
+      <section className="p-2">
         <SidebarToggleButton />
+      </section>
+
+      {/* Pages */}
+      <section className=" p-4">
         <Outlet />
       </section>
     </SidebarProvider>

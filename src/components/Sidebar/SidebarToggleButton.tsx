@@ -6,7 +6,7 @@ export const SidebarToggleButton: React.FC = () => {
   const { toggleSidebar, open } = useSidebar();
 
   return (
-    <Button onClick={() => toggleSidebar()}>
+    <Button className="rounded-lg" onClick={() => toggleSidebar()}>
       {open ? <X /> : <MenuIcon />}
     </Button>
   );
