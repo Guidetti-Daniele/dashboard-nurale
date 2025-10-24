@@ -7,21 +7,14 @@ import {
   InputGroup,
   InputGroupInput,
   InputGroupAddon,
+  type FilterTableControlsProps,
 } from "@/components";
-
-import type { Table } from "@tanstack/react-table";
-
-export type GlobalFilterInputProps<TData> = {
-  table: Table<TData>;
-  globalFilter: string;
-  setGlobalFilter: React.Dispatch<React.SetStateAction<string>>;
-};
 
 export const GlobalFilterInput = <TData,>({
   table,
   globalFilter,
   setGlobalFilter,
-}: GlobalFilterInputProps<TData>) => {
+}: FilterTableControlsProps<TData>) => {
   const globalFilterableColumns = table
     .getAllLeafColumns()
     .filter((col) => col.getCanGlobalFilter());
@@ -29,7 +22,7 @@ export const GlobalFilterInput = <TData,>({
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <InputGroup className="w-[500px]">
+        <InputGroup className="w-[500px] max-w-full">
           <InputGroupInput
             type="text"
             placeholder="Filtro globale..."

@@ -1,9 +1,9 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Button, type CustomTableControlProps } from "@/components";
+import { Button, type TableControlProps } from "@/components";
 
 export const PaginationControls = <TData,>({
   table,
-}: CustomTableControlProps<TData>) => {
+}: TableControlProps<TData>) => {
   const currentPage = table.getState().pagination.pageIndex + 1;
   const totalPages = table.getPageCount();
 

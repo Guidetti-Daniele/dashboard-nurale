@@ -21,10 +21,10 @@ export * from "./CustomAccordion/CustomAccordion";
 // Exporting CustomTable
 export * from "./CustomTable/atoms/FilterColumnInputField";
 export * from "./CustomTable/atoms/TableHeadSortableButton";
-
-export * from "./CustomTable/molecules/GlobalFilterInput";
-export * from "./CustomTable/molecules/FilterColumnInput";
 export * from "./CustomTable/atoms/TableBodyNoResults";
+
+export * from "./CustomTable/molecules/ColumnFilterDropdown";
+export * from "./CustomTable/molecules/GlobalFilterInput";
 export * from "./CustomTable/molecules/TableHeadContent";
 
 export * from "./CustomTable/organisms/AsyncCustomTable";

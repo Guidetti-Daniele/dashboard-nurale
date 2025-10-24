@@ -8,6 +8,7 @@ import {
   getSortedRowModel,
   useReactTable,
   type ColumnDef,
+  type Table as TableType,
 } from "@tanstack/react-table";
 
 import {
@@ -26,6 +27,11 @@ import {
 export type CustomTableProps<TData> = {
   columns: ColumnDef<TData>[];
   data: TData[];
+};
+
+// TODO: transform in a context
+export type TableControlProps<TData> = {
+  table: TableType<TData>;
 };
 
 export const CustomTable = <TData,>({
