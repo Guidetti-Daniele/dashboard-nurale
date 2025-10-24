@@ -16,8 +16,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-  NoResults,
   TableHeadContent,
+  TableBodyNoResults,
   PaginationControls,
   FilterTableControls,
 } from "@/components";
@@ -25,7 +25,6 @@ import {
 export type CustomTableProps<TData> = {
   columns: ColumnDef<TData>[];
   data: TData[];
-  noResultsComp?: React.ReactNode;
 };
 
 export type CustomTableControlProps<TData> = {
@@ -35,7 +34,6 @@ export type CustomTableControlProps<TData> = {
 export const CustomTable = <TData,>({
   columns,
   data,
-  noResultsComp = <NoResults />,
 }: CustomTableProps<TData>) => {
   const table = useReactTable({
     columns,
@@ -72,20 +70,19 @@ export const CustomTable = <TData,>({
           ))}
         </TableHeader>
         <TableBody>
-          {rows.length
-            ? rows.map((row) => (
-                <TableRow key={row.id}>
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
-            : noResultsComp}
+          {rows.length ? (
+            rows.map((row) => (
+              <TableRow key={row.id}>
+                {row.getVisibleCells().map((cell) => (
+                  <TableCell key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))
+          ) : (
+            <TableBodyNoResults colSpan={table.getAllFlatColumns().length} />
+          )}
         </TableBody>
       </Table>
 

@@ -20,7 +20,7 @@ export * from "./CustomTable/atoms/FilterColumnInputField";
 export * from "./CustomTable/atoms/TableHeadSortableButton";
 
 export * from "./CustomTable/molecules/FilterColumnInput";
-export * from "./CustomTable/molecules/NoResults";
+export * from "./CustomTable/atoms/TableBodyNoResults";
 export * from "./CustomTable/molecules/TableHeadContent";
 
 export * from "./CustomTable/organisms/CustomTable";
