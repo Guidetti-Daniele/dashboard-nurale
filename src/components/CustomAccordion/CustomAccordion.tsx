@@ -1,5 +1,6 @@
 import { useId } from "react";
 
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import {
   Accordion,
   AccordionContent,
@@ -7,24 +8,13 @@ import {
   AccordionTrigger,
 } from "@radix-ui/react-accordion";
 
-type AccordionBaseProps<T extends "single" | "multiple"> = {
-  type: T;
-  value?: T extends "single" ? string : string[];
-  defaultValue?: T extends "single" ? string : string[];
-  onValueChange?(value: T extends "single" ? string : string[]): void;
-  collapsible?: T extends "single" ? boolean : never;
-};
-
-type SimpleAccordionProps = AccordionBaseProps<"single">;
-type MultipleAccordionProps = AccordionBaseProps<"multiple">;
-
 type CustomAccordionProps = {
   items: Array<{
     triggerNode: React.ReactNode;
     contentNode: React.ReactNode;
   }>;
   className?: string;
-} & (SimpleAccordionProps | MultipleAccordionProps);
+} & React.ComponentProps<typeof AccordionPrimitive.Root>;
 
 export const CustomAccordion: React.FC<CustomAccordionProps> = ({
   items,
